@@ -40,7 +40,7 @@ contents:
 * [Busses - Reduce and Reshape](#busses---reduce-and-reshape)
 * [Buffers](#buffers)
 * [Groups and Import - working with multiple files](#groups-and-import---working-with-multiple-files)
-* [JX2SC](#jx2sc)
+* [JX2SC - a normal supercollider context](#jx2sc)
 * [OSC mapping](#osc-mapping)
 * [Extra utilities](#extra-utilities)
 ## Connect
