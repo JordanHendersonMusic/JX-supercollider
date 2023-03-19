@@ -6,11 +6,12 @@ A Quark for [supercollider](https://supercollider.github.io/) that aims to do fo
 * Make working with multiple files easy, safe, and reusable.
 * Generally remove some of the nastier edges of supercollider that arise from dealing with multiple files.
 
-Unlike other Quarks[^1], JX is not designed for live coding, or any live alteration of the underlying structure [^2].
+Unlike other Quarks, JX is not designed for live coding, or any live alteration of the underlying structure.
 Instead, this Quark is designed to aid in making reactive systems, where a performer's actions generate osc data in real-time.
+However, it is possible to use normal supercollider techinques in a [JX2SC](#jx2sc) context.
+Alternative sthat allow for a more traditional supercollider way of doings things are: [AlgaNode](https://github.com/vitreo12/AlgaLib) and [ddwMixerChannel](https://github.com/jamshark70/ddwMixerChannel).
 
-[^1]: [AlgaNode](https://github.com/vitreo12/AlgaLib) is a great alternative if one is looking for a similar system for live coding.
-[^2]: there is an exeption to this, where normal supercollider code can be written inside a particular context, see [JX2SC](#jx2sc).
+
 
 
 Therefore, JX also comes with a way to work with OSC mapping, where the mappings *themselves* can be sequenced and manipulated.
