@@ -1,3 +1,4 @@
+
 (
           \name: "JX",
        \summary: "A framework for static synths with owned resources and osc mapping for realtime systems.",
@@ -5,5 +6,7 @@
      \copyright: "Jordan Henderson 2023",
        \license: "GPL",
        \version: "0.1",
+        \schelp: "JX Tutorial",
+
            \url: "https://github.com/JordanHendersonMusic/JX-supercollider",
 )

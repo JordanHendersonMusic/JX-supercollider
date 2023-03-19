@@ -1,0 +1,43 @@
+CLASS:: JXIn
+summary:: An input bus
+categories:: Libraries>JX>UGens>Resources
+related:: Classes/JXOut
+
+DESCRIPTION::
+Get an input from another node.
+
+See the link::Tutorials/JX-Tutorial:: for usage.
+
+CLASSMETHODS::
+
+METHOD:: ar
+
+argument:: name
+link::Classes/Symbol::
+
+argument:: numChannels
+link::Classes/Integer::
+
+argument:: reduceMode
+optional link::Classes/JXReduce:: - defaults to link::Classes/JXReduceSum::
+
+argument:: reshapeMode
+optional link::Classes/JXReshape:: - defaults to link::Classes/JXReshapeCircular::
+
+METHOD:: kr
+
+argument:: name
+link::Classes/Symbol::
+
+argument:: numChannels
+link::Classes/Integer::
+
+argument:: reduceMode
+optional link::Classes/JXReduce:: - defaults to link::Classes/JXReduceMean::
+
+argument:: reshapeMode
+optional link::Classes/JXReshape:: - defaults to link::Classes/JXReshapeCircular::
+
+
+
+PRIVATE:: prRegister
