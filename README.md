@@ -1,45 +1,47 @@
 # JX-supercollider
 A Quark for [supercollider](https://supercollider.github.io/) that aims to do four things:
 
-* Remove manual resource management by having synths own things like busses and buffers.
+* Remove manual resource management by having synths own resources like busses and buffers.
 * Allow connecting of resources between different synths, vastly simplify signal routing as well as sharing of resources.
 * Make working with multiple files easy, safe, and reusable.
-* Generally remove some of the nastier edges of supercollider that arise from dealing with multiple files.
+* Directly manipulate OSC mappings.
 
-Unlike other Quarks[^1], JX is not designed for live coding, or any live alteration of the underlying structure [^2].
+Unlike other Quarks, JX is not designed for live coding, or any live alteration of the underlying structure.
 Instead, this Quark is designed to aid in making reactive systems, where a performer's actions generate osc data in real-time.
+However, it is possible to use normal supercollider techinques in a [JX2SC](#jx2sc) context.
+Alternatives that do similar things but for different purposes are: [AlgaNode](https://github.com/vitreo12/AlgaLib) and [ddwMixerChannel](https://github.com/jamshark70/ddwMixerChannel).
 
-[^1]: [AlgaNode](https://github.com/vitreo12/AlgaLib) is a great alternative if one is looking for a similar system for live coding.
-[^2]: there is an exeption to this, where normal supercollider code can be written inside a particular context, see [JX2SC](#jx2sc).
+Current, JX comes with 3 types of resource:
+* busses, `JXIn` and `JXOut`;
+* buffers, `JXOwnedBuffer` and `JXBorrowedBuffer`;
+* and OSC ports, `JXOscSrc` and `JXOscSink`. 
+
+However the class syntax for adding more is designed to be simple and easy to extend.
 
 
-Therefore, JX also comes with a way to work with OSC mapping, where the mappings *themselves* can be sequenced and manipulated.
+JX treats the OSC mappings **themselves** as object that can be sequenced and manipulated.
 OSC maps can be considered relationships between the different elements of the system, 
 which are then sequenced, blended between, or otherwise manipulated.
 These maps can be dynamic, for example mapping some data to a sine wave, applying some incoming data through a low pass filter,
 or using supercolliders `Demand` rate ugen to generate sequence to data.
 This allows, as a further example, audiovisual relationships to be described in OSC maps, which are then interpolated between as the piece progresses, or in response to some other data.
 
-Current, JX comes with 3 types of resource:
-* busses, `JXIn` and `JXOut`;
-* buffers, `JXOwnedBuffer` and `JXBorrowedBuffer`;
-* and osc ports, `JXOscSrc` and `JXOscSink`. 
 
-However the class syntax for adding more is designed to be simple.
 
 
 
 
 
 # Usage
-Unless otherwise stated, all of the following code should take place inside of a `s.waitForBoot` call.
+Unless otherwise stated, all of the following code must take place inside of a `s.waitForBoot` call. 
+Unlike many other Quarks, the point here is to make an immutable structure, so realtime alterations to the node tree are not alllowed - therefore placing everything inside a routine, such as `s.waitForBoot` is necessary.
 
 contents:
 * [Connections](#connect)
 * [Busses - Reduce and Reshape](#busses---reduce-and-reshape)
 * [Buffers](#buffers)
 * [Groups and Import - working with multiple files](#groups-and-import---working-with-multiple-files)
-* [JX2SC](#jx2sc)
+* [JX2SC - a normal supercollider context](#jx2sc)
 * [OSC mapping](#osc-mapping)
 * [Extra utilities](#extra-utilities)
 ## Connect
