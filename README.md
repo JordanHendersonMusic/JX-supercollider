@@ -32,7 +32,8 @@ However the class syntax for adding more is designed to be simple.
 
 
 # Usage
-Unless otherwise stated, all of the following code should take place inside of a `s.waitForBoot` call.
+Unless otherwise stated, all of the following code must take place inside of a `s.waitForBoot` call. 
+Unlike many other Quarks, the point here is to make an immutable structure, so realtime alterations to the node tree are not alllowed - therefore placing everything inside a routine, such as `s.waitForBoot` is necessary.
 
 contents:
 * [Connections](#connect)
