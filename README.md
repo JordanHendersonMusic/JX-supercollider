@@ -4,7 +4,7 @@ A Quark for [supercollider](https://supercollider.github.io/) that aims to do fo
 * Remove manual resource management by having synths own things like busses and buffers.
 * Allow connecting of resources between different synths, vastly simplify signal routing as well as sharing of resources.
 * Make working with multiple files easy, safe, and reusable.
-* Generally remove some of the nastier edges of supercollider and encourge sustainble coding practices.
+* Generally remove some of the nastier edges of supercollider that arise from dealing with multiple files.
 
 Unlike other Quarks[^1], JX is not designed for live coding, or any live alteration of the underlying structure [^2].
 Instead, this Quark is designed to aid in making reactive systems, where a performer's actions generate osc data in real-time.
