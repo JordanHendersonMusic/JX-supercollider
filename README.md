@@ -14,8 +14,11 @@ Instead, this Quark is designed to aid in making reactive systems, where a perfo
 
 
 Therefore, JX also comes with a way to work with OSC mapping, where the mappings *themselves* can be sequenced and manipulated.
-Osc maps can be considered relationships between the different elements of the system, 
+OSC maps can be considered relationships between the different elements of the system, 
 which are then sequenced, blended between, or otherwise manipulated.
+These maps can be dynamic, for example mapping some data to a sine wave, applying some incoming data through a low pass filter,
+or using supercolliders `Demand` rate ugen to generate sequence to data.
+This allows, as a further example, audiovisual relationships to be described in OSC maps, which are then interpolated between as the piece progresses, or in response to some other data.
 
 Current, JX comes with 3 types of resource:
 * busses, `JXIn` and `JXOut`;
