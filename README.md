@@ -1,4 +1,6 @@
 # JX-supercollider
+To install run: `Quarks.install("https://github.com/JordanHendersonMusic/JX-supercollider.git")`.
+
 A Quark for [supercollider](https://supercollider.github.io/) that aims to do four things:
 
 * Remove manual resource management by having synths own resources like busses and buffers.
