@@ -8,7 +8,7 @@ A Quark for [supercollider](https://supercollider.github.io/) that aims to do fo
 * Make working with multiple files easy, safe, and reusable.
 * Directly manipulate OSC mappings.
 
-Unlike other Quarks, JX is not designed for live coding, or any live alteration of the underlying structure.
+Unlike other many Quarks, JX is not designed for any live alteration of the underlying server graph (this makes live coding not possible).
 Instead, this Quark is designed to aid in making reactive systems, where a performer's actions generate osc data in real-time.
 However, it is possible to use normal supercollider techinques in a [JX2SC](#jx2sc) context.
 Alternatives that do similar things but for different purposes are: [AlgaNode](https://github.com/vitreo12/AlgaLib) and [ddwMixerChannel](https://github.com/jamshark70/ddwMixerChannel).
@@ -27,8 +27,6 @@ which are then sequenced, blended between, or otherwise manipulated.
 These maps can be dynamic, for example mapping some data to a sine wave, applying some incoming data through a low pass filter,
 or using supercolliders `Demand` rate ugen to generate sequence to data.
 This allows, as a further example, audiovisual relationships to be described in OSC maps, which are then interpolated between as the piece progresses, or in response to some other data.
-
-
 
 
 
